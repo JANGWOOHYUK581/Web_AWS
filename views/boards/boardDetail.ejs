@@ -1,0 +1,56 @@
+<body>
+    <div id="wrapper">
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">게시글 상세</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                        </div>
+
+                        <div class="panel-body">
+                            <div class="col-sm-12">
+                                <h3 class="panel-title"><%-board.bbsTitle%></h3>
+                            </div>
+                            <hr>
+                            <div class="col-sm-12 detail-View">
+                                <article>
+                                    <p><%-board.bbsContent%></p>
+                                </article>
+                            </div>
+                            <hr>                            
+                            <div class="col-sm-12">첨부파일 : <a href="/utils/fileDown/<%=board.fileNm%>" id="atchFile" ><%-board.fileNm%></a></div>
+                        </div>
+                        <div class="panel-footer">
+                            <a href="/boards/<%=board.bbsGroup%>/<%=board.bbsId%>/edit" class="btn btn-default">수정</a>
+                            <a href="/boards/<%=params.bbsGroup%>" class="btn btn-default" >목록</a>
+                            <a href="" onclick="btnDel()" class="btn btn-default">삭제</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            
+        });
+        
+        function btnDel(){
+            if(confirm('삭제하시겠습니까?')){
+                fetch('/boards/<%=board.bbsGroup%>/<%=board.bbsId%>',{
+                    method :'DELETE'
+                })
+                .then((result) => result.json())
+                .then((data)=> window.location.href = data.redirect)
+                .catch((err)=>{
+                    console.log(err);
+                });
+            }
+        }
+
+    </script>
+</body>

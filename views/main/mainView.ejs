@@ -1,0 +1,60 @@
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Map</title>
+</head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIp3ngNX6NkyeVZ0BpFPEUv0_PiZv2opU&callback=initMap&region=kr&sensor=false"></script>
+<script>
+    function initMap() {
+      var seoul = { lat: 37.5642135 ,lng: 127.0016985 };
+      var map = new google.maps.Map(
+        document.getElementById('map'), {
+          zoom: 12,
+          center: seoul,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+
+        var marker = new google.maps.Marker({
+            position: seoul,
+           title:'Click to zoom'
+        });
+ 
+      marker.setMap(map);
+      google.maps.event.addListener(marker,'click',function() {
+        map.setZoom(9);
+        map.setCenter(marker.getPosition());
+      });
+    }
+   
+    google.maps.event.addDomListener(window, 'load', initMap);
+
+  </script>
+<body>
+  <div id="map" style="width:100%; height: 80vh;"></div>
+
+  <div class="container-fluid bg-3 text-center">    
+    <h3>여행지 선택</h3><br>
+    <div class="row">
+      <div class="col-sm-3">
+        <p>아시아</p>
+        <a href="./main/choicePage">대만</a>
+      </div>
+      <div class="col-sm-3"> 
+        <p>유럽</p>
+        <a href="./main/choicePage">영국</a>
+      </div>
+      <div class="col-sm-3"> 
+        <p>북아메리카</p>
+        <a href="./main/choicePage">미국</a>
+      </div>
+      <div class="col-sm-3">
+        <p>남아메리카</p>
+        <a href="./main/choicePage">브라질</a>
+      </div>
+    </div>
+  </div><br>
+  
+</body>

@@ -1,0 +1,121 @@
+<body>
+    <div class="row">
+        <div class="col-sm-6 col-md-6">
+            <div class="thumbnail">
+                <img src="/images/Taiwan.jpg" alt="Taiwan" width="1000" height="1000">
+                <div class="caption">
+                    <h3>대만</h3>
+                    <p>동아시아의 섬나라 대만은 멋진 산, 기념 건축물, 사원, 고층 건물 등 자연과 문화가 풍부한 곳입니다. 아름다운 산을 배경으로 새하얀 모래 해변이 펼쳐져 있고 열대 숲과 온천은 물론 수도 타이베이의 현대적인 모습까지 대만에는 다양한 즐길거리가 있어요.</p>
+                    <p>
+                        <a href="/boards/대만" class="btn btn-primary" role="button">Review</a>
+                        <a href="/tour/order" class="btn btn-primary" role="button">주문</a>
+                        <a href="#" class="btn btn-default" role="button" onclick="play('1')" data-toggle="modal" data-target="#myModal">영상</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+            <div class="thumbnail">
+                <img src="/images/England.jpg" alt="..." width="1000" height="1000">
+                <div class="caption">
+                    <h3>영국</h3>
+                    <p>영국은 역사와 개성, 그리고 부인할 수 없는 아름다움으로 가득한 나라예요. 영국은 잉글랜드, 스코틀랜드, 웨일스, 북아일랜드로 구성되어 있으며 시선을 사로잡는 다양한 풍경과 독특한 문화가 있는 나라예요.</p>
+                    <p>
+                        <a href="/boards/영국" class="btn btn-primary" role="button">Review</a>
+                        <a href="/tour/order" class="btn btn-primary" role="button">주문</a>
+                        <a href="#" class="btn btn-default" role="button" onclick="play('2')" data-toggle="modal" data-target="#myModal">영상</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+            <div class="thumbnail">
+                <img src="/images/USA.jpg" alt="..." width="1000" height="1000">
+                <div class="caption">
+                    <h3>미국</h3>
+                    <p>미국은 광활한 대지입니다. 따라서 대부분의 사람들은 동부 해안, 남서부, 플로리다 또는 캘리포니아의 해변, 또는 하와이 및 알래스카와 같은 외딴 지역 등 특정 지역 내에서 여행 계획을 세웁니다.</p>
+                    <p>
+                        <a href="/boards/미국" class="btn btn-primary" role="button">Review</a>
+                        <a href="/tour/order" class="btn btn-primary" role="button">주문</a>
+                        <a href="#" class="btn btn-default" role="button" onclick="play('3')" data-toggle="modal" data-target="#myModal">영상</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+            <div class="thumbnail">
+                <img src="/images/Brazil.jpg" alt="..." width="1000" height="1000">
+                <div class="caption">
+                    <h3>브라질</h3>
+                    <p>남아메리카에서 가장 흥겨운 분위기와 아름다운 자연을 갖춘 이 나라를 방문하여 수많은 해변가를 둘러보고 흥겨운 파티 분위기에 빠져 보세요. 남아메리카에 위치한 브라질은 무척 독특한 개성을 갖고 있습니다.</p>
+                    <p>
+                        <a href="/boards/브라질" class="btn btn-primary" role="button">Review</a>
+                        <a href="/tour/order" class="btn btn-primary" role="button">주문</a>
+                        <a href="#" class="btn btn-default" role="button" onclick="play('')" data-toggle="modal" data-target="#myModal">영상</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="embed-responsive embed-responsive-16by9">
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">랜선 여행!</h4>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <iframe width="570" height="500" id="iFrameSrc" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" onclick="closeBtn()" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+
+        });
+
+        function play(type) {
+            var changeSrc = "";
+
+            if (type == '1') {
+                changeSrc = "https://www.youtube.com/embed/eqTWM9cUUHc";
+
+            } else if (type == '2') {
+                changeSrc = "https://www.youtube.com/embed/zPGKtTNx8M0";
+
+            } else if (type == '3') {
+                changeSrc = "https://www.youtube.com/embed/85ZCQeEoUZk";
+
+
+            } else if (type == '4') {
+                changeSrc = "https://www.youtube.com/embed/vrdGMVO669o";
+
+            }
+            $("#iFrameSrc").attr("src", changeSrc);
+        }
+        $(".Close").on("click", function() {
+            $("iframe")[0].contentWindow.postMessage('{"event":"command","func":"' + 'Close' + '","args":""}', '*');
+        });
+    </script>
+
+
+
+
+
+</body>
+</body>

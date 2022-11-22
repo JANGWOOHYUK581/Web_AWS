@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커뮤니티</title>
+
+    <!-- jquery -->
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css" type="text/css">
+    <!-- 썸머노트 에디터 -->
+    <link rel="stylesheet" href="/summernote/summernote-lite.css" type="text/css">
+    <link rel="stylesheet" href="/css/board.css" type="text/css">
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    
+    
+</head>
+<body>
+    <header>
+        <%- include('../partials/header.ejs')%>
+    </header>
+    <main>
+        <div class="container" >
+            <%- body%>
+        </div>
+    </main>
+    <footer>
+        <%- include('../partials/footer')%>
+    </footer>
+    <%- script%>
+</body>
+</html>

@@ -1,0 +1,16 @@
+.text-ellipsis{
+    display: inline-block; 
+    width: 150px; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+
+body {
+     padding-top: 70px;
+     padding-bottom: 70px;
+}
+
+.detail-View{
+    height: 500px;   
+}
